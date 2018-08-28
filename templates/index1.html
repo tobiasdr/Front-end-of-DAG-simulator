@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+              
+<title>DAG visualisation</title>
+<script src="https://d3js.org/d3.v4.js"></script>
+<!--<script src="https://dagrejs.github.io/project/graphlib-dot/v0.6.3/graphlib-dot.js"></script>-->
+<script src="https://dagrejs.github.io/project/dagre-d3/latest/dagre-d3.js"></script>
+<script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+<!--  <script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>-->
+<!--<script src="jquery.csv.js"></script>-->
+        
+<style>
+svg {
+  border: 1px solid #999;
+  overflow: hidden;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;   
+}
+
+            
+.node {
+  white-space: nowrap;
+}
+.node rect,
+.node circle,
+.node ellipse {
+  stroke: #333;
+  fill: #fff;
+  stroke-width: 1.5px;
+}
+.cluster rect {
+  stroke: #333;
+  fill: #000;
+  fill-opacity: 0.1;
+  stroke-width: 1.5px;
+}
+.edgePath path.path {
+  stroke: #333;
+  stroke-width: 1.5px;
+  fill: none;
+}
+</style>
+
+<style>
+h1, h2 {
+  color: #333;
+}
+textarea {
+  width: 800px;
+}
+label {
+  margin-top: 1em;
+  display: block;
+}
+.error {
+  color: red;
+}   
+        
+</style>
+    
+</head>
+<body>
+    
+
+
+<svg id="DAG" width=800 height=600>
+  <g/>
+</svg>
+    
+
+<p id="array"></p>
+<p id="array1"></p>
+    
+<script type="text/javascript">
+
+var g = new dagreD3.graphlib.Graph().setGraph({});
+
+// Set an object for the graph label
+g.setGraph({});
+
+// Default to assigning a new object as a label for each new edge.
+g.setDefaultEdgeLabel(function() { return {}; });
+
+// Adding nodes to graph
+for (let i = 0; i < 7; i++) { 
+   g.setNode(i, {width: 10, height: 10 }) ;
+}
+
+// Add edges to the graph.
+//g.setEdge(0, 1);
+//g.setEdge(0, 2);
+//g.setEdge(2, 3);
+//g.setEdge(3, 5);
+//g.setEdge(2, 4);
+//g.setEdge(1, 3);
+
+        
+     
+        
+// function to create array that separates data for nodes and edges
+function parse(str) {
+  let result = [], item = '', depth = 0;
+
+  function push() { if (item) result.push(item); item = ''; }
+
+  for (let i = 0, c; c = str[i], i < str.length; i++) {
+    if (!depth && c === ',') push();
+    else {
+      item += c;
+      if (c === '[') depth++;
+      if (c === ']') depth--;
+    }
+  }
+  
+  push();
+  return result;
+}      
+ 
+// rendering function
+function renderGraph() {
+    
+    var svg = d3.select("svg"),
+    inner = svg.select("g");      
+        
+    // Create the renderer
+    var render = new dagreD3.render();
+
+    // Run the renderer
+    render(inner, g);
+
+    // Centering graph
+    var xCenterOffset = (svg.attr("width") - g.graph().width) / 2;
+    inner.attr("transform", "translate(" + xCenterOffset + ", 20)");
+    svg.attr("height", g.graph().height + 80); 
+}    
+    
+function check(x) {
+    return x.every(function(i){ return typeof i === "string" });
+}
+    
+//Callback from AJAX call
+function processData(data){
+    // parsing csv file into array
+    var parsedArray=parse(data);
+    
+    var DAGArray= parsedArray.map(function (x) { 
+        if (x % 2) {
+        return parseInt(x, 10);
+        } else {
+        return JSON.parse(x);
+        }
+    });
+
+    //console.log(DAGArray);
+    //document.getElementById("array").innerHTML = DAGArray[3][0];
+    
+    // creating edges from DAGArray
+   
+ for (let i = 0; i < 11; i = i+2) { 
+     g.setEdge(DAGArray[i], DAGArray[i+1][0]);
+     g.setEdge(DAGArray[i], DAGArray[i+1][1]);      
+} 
+    
+    //call rendering function
+    renderGraph();
+}
+
+
+        
+// AJAX call to fetch CSV file of DAG information with callback to processData      
+function getData() {
+    $.ajax({
+        url : 'DAG_test_data2.csv',
+        type: 'GET',
+        success : processData
+    })
+    
+}
+        
+getData();
+    
+
+</script>
+     
+  
+</body>
+
+</html>

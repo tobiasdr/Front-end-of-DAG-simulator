@@ -1,0 +1,18 @@
+{% extends 'layout.html'%}
+
+{% block body %}
+
+<svg id="DAG" width=1200 height=1000>
+  <g/>
+</svg>
+
+<input type="button" onclick="getData('weighted')" value="weighted">
+<input type="button" onclick="getData('unweighted')" value="unweighted">
+<input type="button" onclick="getData('random')" value="random">
+
+
+
+<p id="array"></p>
+<p id="array1"></p>
+
+{% endblock %}
