@@ -46,3 +46,13 @@ label {
   color: red;
 }  
 
+
+.card-body > * {
+    display: inline-block;
+}
+
+p {
+    
+    display: inline-block; 
+}
+

@@ -20,7 +20,7 @@ def get_data():
 #    
 #    print("The requested method was: {}".format(method))
 #    
-    simu = core.Multi_Agent_Simulation(100, 2, 2, 0.005, 0.5, method, _printing=True)
+    simu = core.Multi_Agent_Simulation(50, 2, 2, 0.005, 0.5, method, _printing=True)
     simu.setup()
     simu.run()
     return core.string_export(simu)

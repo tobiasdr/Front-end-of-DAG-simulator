@@ -2,17 +2,209 @@
 
 {% block body %}
 
-<svg id="DAG" width=1200 height=1000>
-  <g/>
-</svg>
 
-<input type="button" onclick="getData('weighted')" value="weighted">
-<input type="button" onclick="getData('unweighted')" value="unweighted">
-<input type="button" onclick="getData('random')" value="random">
+    
+<div class="container">
+  <div style="background:transparent !important" class="jumbotron">
+    <h1 class="text-center">DAG Simulator</h1> 
+    
+  </div>
+</div>
 
 
 
-<p id="array"></p>
-<p id="array1"></p>
+<div style="margin-top: -80px;" class="container">
+  <div class="row">
+<div class="card-group">
+  <div class="card">
+    
+    <div class="card-body">
+        
+      <h5 class="card-title">General</h5>
+        <br />
+        
+        
+        <div class="container">
+        <div class="row">
+        <div class="col-3">
+         <p># tx</p>
+        </div>
+        <div class="slidecontainer col-9">
+           
+            <input style="width: 320px;" type="range" min="1" max="100" value="50" class="slider" id="myRange">
+        </div>
+      </div>
+       </div> 
+        
+        <br />
+        <div class="container">
+        <div class="row">
+        <div class="col-3">
+         <p>lambda</p>
+        </div>
+        <div class="slidecontainer col-9">
+           
+            <input style="width: 320px;" type="range" min="1" max="100" value="50" class="slider" id="myRange">
+        </div>
+      </div>
+       </div> 
+        
+        <br />
+        
+        <div class="container">
+         <div class="row">
+        <div class="col-3">
+         <p>alpha</p>
+        </div>
+        <div class="slidecontainer col-9">
+           
+            <input style="width: 320px;" type="range" min="1" max="100" value="50" class="slider" id="myRange">
+        </div>
+      </div>
+       </div>
+        
+        <br />
+        
+        <div class="container">
+        <div class="row">
+        <div class="col-3">
+         <p># agents</p>
+        </div>
+        <div class="slidecontainer col-9">
+           
+            <input style="width: 320px;" type="range" min="1" max="100" value="50" class="slider" id="myRange">
+        </div>
+      </div>
+        </div>
+         <br />
+        
+           <div class="container">
+        <div class="row">
+        <div class="col-3">
+         <p>DAG</p>
+        </div>
+        <select style="width: 320px;" onchange="test(this);">
+          <option value="PHANTOM">PHANTOM</option>
+          <option value="SPECTRE">SPECTRE</option>
+          <option value="IOTA">IOTA</option>
+        </select>
+      </div>
+        </div>
+        
+        
+      
+    </div>
+  </div>
+    
+    
+  <div class="card">
+   
+    <div class="card-body">
+      <h5 class="card-title">Advanced</h5>
+         <br />
+        <p class="card-text">Choose tip selection algorithm</p>
+         <div class="container">
+        <div class="row">
+            <div class="col-sm">
+          <input type="radio" name="tipalgo" value="male" checked> Weighted<br>
+                </div>
+            <div class="col-sm">
+          <input type="radio" name="tipalgo" value="female"> Unweighted<br>
+             </div>
+                <div class="col-sm">
+          <input type="radio" name="tipalgo" value="other"> Random
+                </div>
+        </div>
+             </div>
+        
+        
+            <div style="margin-top: 30px;" class="container">
+        <div class="row">
+        <div class="col-4">
+         <p>Network split</p>
+        </div>
+        <div style="border: 1px black;" class="col-8 text-center">
+           <p>200tx</p>
+            
+        </div>
+      </div>
+        </div>
+        
+        <div style="margin-top: 30px;" class="container">
+        <div class="row">
+        <div class="col-4">
+         <p>Network connected</p>
+        </div>
+        <div style="border: 1px black;" class="col-8 text-center">
+           <p>500tx</p>
+            
+        </div>
+      </div>
+        </div>
+      
+  </div>
+</div>
+  </div>
+</div>
+</div>
 
+
+
+<div class="container">
+  <div class="row">
+<div style="width: 100%;" class="card-group">
+  <div class="card">
+   
+    <div class="card-body">
+        <div class="col-sm-12 text-center">
+      <button type="button" class="btn btn-primary">Simulate</button>
+            </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <div class="col-sm-12 text-center">
+      <button type="button" class="btn btn-primary">Export</button>
+            </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+
+<div style="margin-right: 85px;" class="container">
+
+   
+   
+        
+        <svg id="DAG" width=1135 height=400>
+          <g/>
+        </svg>
+
+</div>
+
+
+<div class="container">
+  <div class="row">
+<div class="card-group">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card">
+
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+ 
+</div>
+</div>
+</div>
 {% endblock %}
