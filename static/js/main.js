@@ -84,7 +84,7 @@ function getData(method) {
     
 }
         
-getData("weighted");
+
 
 window.test = function(e) {
   if (e.value === 'weighted') {
@@ -95,4 +95,10 @@ window.test = function(e) {
     getData("random");
   }
 }
+
+function updateTextInput(val) {
+          document.getElementById('textInput').value=val; 
+}
+
+
 

@@ -56,3 +56,12 @@ p {
     display: inline-block; 
 }
 
+.jumbotron {
+    
+    background:transparent !important
+}
+
+.slider {
+    
+    width: 320px;
+}

@@ -5,7 +5,7 @@
 
     
 <div class="container">
-  <div style="background:transparent !important" class="jumbotron">
+  <div class="jumbotron">
     <h1 class="text-center">DAG Simulator</h1> 
     
   </div>
@@ -31,7 +31,8 @@
         </div>
         <div class="slidecontainer col-9">
            
-            <input style="width: 320px;" type="range" min="1" max="100" value="50" class="slider" id="myRange">
+             <input class="slider" type="range" min="1" max="100" value="1" step="1" oninput="document.getElementById('tx').innerText = parseInt(this.value);tx=parseInt(this.value)">
+	       <output id="tx">1</output>
         </div>
       </div>
        </div> 
@@ -44,24 +45,14 @@
         </div>
         <div class="slidecontainer col-9">
            
-            <input style="width: 320px;" type="range" min="1" max="100" value="50" class="slider" id="myRange">
+             <input class="slider" type="range" min="1" max="100" value="1" step="1" oninput="document.getElementById('lambda').innerText = parseInt(this.value);lambda=parseInt(this.value)">
+	       <output id="lambda">1</output>
         </div>
       </div>
        </div> 
         
-        <br />
         
-        <div class="container">
-         <div class="row">
-        <div class="col-3">
-         <p>alpha</p>
-        </div>
-        <div class="slidecontainer col-9">
-           
-            <input style="width: 320px;" type="range" min="1" max="100" value="50" class="slider" id="myRange">
-        </div>
-      </div>
-       </div>
+   
         
         <br />
         
@@ -72,7 +63,8 @@
         </div>
         <div class="slidecontainer col-9">
            
-            <input style="width: 320px;" type="range" min="1" max="100" value="50" class="slider" id="myRange">
+             <input class="slider" type="range" min="1" max="100" value="1" step="1" oninput="document.getElementById('agents').innerText = parseInt(this.value);agents=parseInt(this.value)">
+	       <output id="agents">1</output>
         </div>
       </div>
         </div>
@@ -106,16 +98,29 @@
          <div class="container">
         <div class="row">
             <div class="col-sm">
-          <input type="radio" name="tipalgo" value="male" checked> Weighted<br>
+          <input type="radio" name="tipalgo" value="weighted" checked> Weighted<br>
                 </div>
             <div class="col-sm">
-          <input type="radio" name="tipalgo" value="female"> Unweighted<br>
+          <input type="radio" name="tipalgo" value="unweighted"> Unweighted<br>
              </div>
                 <div class="col-sm">
-          <input type="radio" name="tipalgo" value="other"> Random
+          <input type="radio" name="tipalgo" value="random"> Random
                 </div>
         </div>
              </div>
+        
+             <div class="container">
+         <div class="row">
+        <div class="col-3">
+         <p>alpha</p>
+        </div>
+        <div class="slidecontainer col-9">
+           
+            <input class="slider" type="range" min="1" max="100" value="1" step="1" oninput="document.getElementById('alpha').innerText = parseInt(this.value);alpha=parseInt(this.value)">
+	       <output id="alpha">1</output>	
+        </div>
+      </div>
+       </div>
         
         
             <div style="margin-top: 30px;" class="container">
@@ -157,7 +162,7 @@
    
     <div class="card-body">
         <div class="col-sm-12 text-center">
-      <button type="button" class="btn btn-primary">Simulate</button>
+      <button onclick="getData('weighted')" type="button" class="btn btn-primary">Simulate</button>
             </div>
     </div>
   </div>
