@@ -65,3 +65,23 @@ p {
     
     width: 320px;
 }
+
+#githublink {
+    
+    text-align: center;
+}
+
+#firstcard {
+    
+    margin-top: -80px;
+}
+
+#dropdown {
+    
+    width: 320px;
+}
+
+#container1, #container2, #container3 {
+    
+    margin-top: 20px;
+}
