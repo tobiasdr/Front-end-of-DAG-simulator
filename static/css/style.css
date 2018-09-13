@@ -74,14 +74,42 @@ p {
 #firstcard {
     
     margin-top: -80px;
+    
 }
+
+#cardgroup {
+    
+   
+}
+
 
 #dropdown {
     
     width: 320px;
 }
 
-#container1, #container2, #container3 {
+#container5, #container6, #container7 {
     
     margin-top: 20px;
+     
+}
+
+#container1, #container2, #container3, #container4 {
+    
+    margin-top: 20px;
+}
+
+#DAG {
+    
+    width: 100%;
+    margin: auto;
+    height: 450px;
+    border: 5px transparent;
+}
+
+
+
+.card {
+    
+    border: 5px transparent !important
 }

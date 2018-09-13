@@ -17,7 +17,7 @@
 
 <div id="firstcard" class="container">
   <div class="row">
-<div class="card-group">
+<div id="cardgroup" class="card-group">
   <div class="card">
     
     <div class="card-body">
@@ -26,7 +26,7 @@
         <br />
         
         
-        <div class="container">
+        <div id="container1" class="container">
         <div class="row">
         <div class="col-3">
          <p># tx</p>
@@ -40,7 +40,7 @@
        </div> 
         
         <br />
-        <div class="container">
+        <div id="container2" class="container">
         <div class="row">
         <div class="col-3">
          <p>lambda</p>
@@ -58,7 +58,7 @@
         
         <br />
         
-        <div class="container">
+        <div id="container3" class="container">
         <div class="row">
         <div class="col-3">
          <p># agents</p>
@@ -72,15 +72,15 @@
         </div>
          <br />
         
-           <div class="container">
+           <div id="container4" class="container">
         <div class="row">
         <div class="col-3">
          <p>DAG</p>
         </div>
         <select id="dropdown" onchange="test(this);">
-          <option value="PHANTOM">PHANTOM</option>
+          <option value="PHANTOM">IOTA</option>
           <option value="SPECTRE">SPECTRE</option>
-          <option value="IOTA">IOTA</option>
+          <option value="IOTA">PHANTOM</option>
         </select>
       </div>
         </div>
@@ -111,7 +111,7 @@
         </div>
              </div>
         
-             <div id="container1" class="container">
+             <div id="container5" class="container">
          <div class="row">
         <div class="col-3">
          <p>alpha</p>
@@ -125,7 +125,7 @@
        </div>
         
         
-            <div id="container2" class="container">
+            <div id="container6" class="container">
         <div class="row">
         <div class="col-4">
          <p>Network split</p>
@@ -137,7 +137,7 @@
       </div>
         </div>
         
-        <div id="container3" class="container">
+        <div id="container7" class="container">
         <div class="row">
         <div class="col-4">
          <p>Network connected</p>
@@ -180,17 +180,22 @@
 </div>
 
 
-<div style="margin-right: 85px;" class="container">
+<div class="container">
 
+<div class="card-group">
+  <div class="card">
    
    
         
-        <svg id="DAG" width=1135 height=400>
+        <svg id="DAG">
           <g/>
         </svg>
 
-</div>
 
+</div>
+</div>
+</div>    
+    
 
 <div class="container">
   <div class="row">

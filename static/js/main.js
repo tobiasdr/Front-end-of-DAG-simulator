@@ -23,7 +23,7 @@ function renderGraph() {
     render(inner, g);
 
     // Centering graph
-    var xCenterOffset = (svg.attr("width") - g.graph().width) / 2;
+    var xCenterOffset = -(svg.attr("width") - g.graph().width) / 1.5;
     inner.attr("transform", "translate(" + xCenterOffset + ", 20)");
     svg.attr("height", g.graph().height + 80); 
 }    
@@ -75,7 +75,6 @@ function processData(data){
         
 // AJAX call to fetch CSV file of DAG information with callback to processData      
 function getData(method) {
-    g.setGraph({});
     $.ajax({
         url: '/data?method='+method,
         type: 'GET',
