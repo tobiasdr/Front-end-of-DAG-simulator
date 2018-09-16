@@ -100,4 +100,30 @@ function updateTextInput(val) {
 }
 
 
+$(document).ready(function(){
+    $('#advanced1').hide();
+    $('#advanced2').hide();
+    $('#advanced3').hide();
+    
+    // First Way : 
+    $('#HiddenInput').empty();
+    $('#HiddenInput').val($('#dropdown').val());
+    var value =  $('#HiddenInput').val();
+    $('#dropdown').val(value);
+    $('#div' + value).show();
+ 
+    
+    //Second Way just get dropdown value show value of the DIv: 
+  //  var value2 =  $('#dropdown').val();
+   // $('#div' + value2).show();
+    
+   $('#dropdown').change(function() {
+     $('#advanced1').hide();
+    $('#advanced2').hide();
+    $('#advanced3').hide();
+      $('#HiddenInput').val($(this).val());
+      $('#advanced' + $(this).val()).show();
+ });
+});
+
 
