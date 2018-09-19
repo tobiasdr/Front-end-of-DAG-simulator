@@ -26,26 +26,26 @@
         <br />
         
         
-        <div id="container1" class="container">
+        <div id="txcontainer" class="container">
         <div class="row">
-        <div class="col-3">
+        <div class="col-2">
          <p># tx</p>
         </div>
-        <div class="slidecontainer col-9">
+        <div class="slidecontainer col-10">
            
-             <input class="slider" type="range" min="1" max="100" value="1" step="1" oninput="document.getElementById('tx').innerText = parseInt(this.value);tx=parseInt(this.value)">
+             <input class="slider" type="range" min="1" max="10000" value="1" step="1" oninput="document.getElementById('tx').innerText = parseInt(this.value);tx=parseInt(this.value)">
 	       <output id="tx">1</output>
         </div>
       </div>
        </div> 
         
         <br />
-        <div id="container2" class="container">
+        <div id="lambdacontainer" class="container">
         <div class="row">
-        <div class="col-3">
+        <div class="col-2">
          <p>lambda</p>
         </div>
-        <div class="slidecontainer col-9">
+        <div class="slidecontainer col-10">
            
              <input class="slider" type="range" min="1" max="100" value="1" step="1" oninput="document.getElementById('lambda').innerText = parseInt(this.value);lambda=parseInt(this.value)">
 	       <output id="lambda">1</output>
@@ -58,12 +58,12 @@
         
         <br />
         
-        <div id="container3" class="container">
+        <div id="agentscontainer" class="container">
         <div class="row">
-        <div class="col-3">
+        <div class="col-2">
          <p># agents</p>
         </div>
-        <div class="slidecontainer col-9">
+        <div class="slidecontainer col-10">
            
              <input class="slider" type="range" min="1" max="100" value="1" step="1" oninput="document.getElementById('agents').innerText = parseInt(this.value);agents=parseInt(this.value)">
 	       <output id="agents">1</output>
@@ -72,7 +72,7 @@
         </div>
          <br />
         
-           <div id="container4" class="container">
+           <div id="dropdowncontainer" class="container">
         <div class="row">
         <div class="col-3">
          <p>DAG</p>
@@ -113,7 +113,7 @@
         </div>
              </div>
         
-             <div id="container5" class="container">
+             <div id="alphacontainer" class="container">
          <div class="row">
         <div class="col-3">
          <p>alpha</p>
@@ -127,7 +127,7 @@
        </div>
         
         
-            <div id="container6" class="container">
+            <div id="splitcontainer" class="container">
         <div class="row">
         <div class="col-4">
          <p>Network split</p>
@@ -139,7 +139,7 @@
       </div>
         </div>
         
-        <div id="container7" class="container">
+        <div id="networkcontainer" class="container">
         <div class="row">
         <div class="col-4">
          <p>Network connected</p>

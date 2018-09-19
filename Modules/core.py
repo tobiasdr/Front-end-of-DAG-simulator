@@ -17,9 +17,9 @@ from Modules.simulation.simulation_multi_agent import Multi_Agent_Simulation
 #    return simu
 
 simu = Multi_Agent_Simulation(100, 2, 2, 0.005, 0.5, "weighted", _printing=True)
-simu.setup()
-simu.run()
-print(string_export(simu))
+#simu.setup()
+#simu.run()
+#print(string_export(simu))
 
 #############################################################################
 # SIMULATION: SINGLE AGENT

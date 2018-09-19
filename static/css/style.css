@@ -63,7 +63,7 @@ p {
 
 .slider {
     
-    width: 320px;
+    width: 290px;
 }
 
 #githublink {
@@ -88,13 +88,13 @@ p {
     width: 320px;
 }
 
-#container5, #container6, #container7 {
+#alphacontainer, #splitcontainer, #networkcontainer {
     
     margin-top: 20px;
      
 }
 
-#container1, #container2, #container3, #container4 {
+#txcontainer, #lambdacontainer, #agentscontainer, #dropdowncontainer {
     
     margin-top: 20px;
 }
